@@ -1,15 +1,20 @@
 import 'dart:io';
-void main (List<String> args){
-  print("");
-  int num = -1;
-  while (num != 0) {
-    print("ingrese un numero (cero para salir)");
+
+void main() {
+  int cantNum, contador = 0, num, suma = 0;
+  double promedio;
+  print("digite la cantidad de numeros");
+  cantNum = int.parse(stdin.readLineSync()!);
+  while (contador < cantNum) {
+    print("digite el numero positivo");
     num = int.parse(stdin.readLineSync()!);
-    if (num % 2 == 0){
-  print("el numero es par");
-    }
-   else {
-    print("el numero es impar");
+    if (num > 0) {
+      suma = suma + num;
+      contador++;
+    } else {
+      print("el numero digitado no es positivo");
     }
   }
+  promedio = suma / contador;
+  print("el promedio es: $promedio");
 }
